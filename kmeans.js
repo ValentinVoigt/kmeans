@@ -71,15 +71,15 @@ class Mean extends Point {
 }
 
 function pickRandom(list, n) {
-	let indexes = [...Array(n).keys()];
-	let samples = [];
+	let indexes = [...Array(list.length).keys()];
+	let randomIndexes = [];
 
-	while (samples.length < n) {
+	while (randomIndexes.length < n) {
 		let random = Math.floor(Math.random() * indexes.length);
-		samples.push(indexes.splice(random, 1)[0]);
+		randomIndexes.push(indexes.splice(random, 1)[0]);
 	}
 
-	return samples.map((i) => list[i]);
+	return randomIndexes.map((i) => list[i]);
 }
 
 function onBtnResetClick() {
